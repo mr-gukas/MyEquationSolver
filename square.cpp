@@ -30,8 +30,8 @@ int main(void)
         {
             count = SolveTheSquare(quadr, line, free, &x1, &x2);
             ShowSolution(count, &x1, &x2);
+            eatline();
         }
-        eatline();
     }
     puts("Программа завершена");
 
@@ -43,7 +43,9 @@ roots SolveTheSquare(double quadr, double line, double free, double* x1, double*
     if (NearZero(quadr))
     {
         if (NearZero(line))
+        {
             return (NearZero(free)) ? INFIN : NO_ROOTS;
+        }
         else
         {
             *x1 = -free / line;
@@ -56,7 +58,9 @@ roots SolveTheSquare(double quadr, double line, double free, double* x1, double*
     {
         double discr = line*line - 4*quadr*free;
         if (discr < 0.0f)
+        {
             return NO_ROOTS;
+        }
         else
         {
             *x1 = (-line + sqrt(discr)) / (2 * quadr);
@@ -103,7 +107,9 @@ int GetChoice(void)
     while ((choice = getchar()) != EOF) {
         eatline();
         if (strchr("ab", choice) == NULL)
+        {
             puts("Введено неверное значение. Введите a или b:");
+        }
         else
             break;
     }
