@@ -1,32 +1,46 @@
 #include <stdbool.h>
 
+///@brief Класс, определяющий количество корней уравнения
+enum Roots
+{
+    NO_ROOTS, ///<Корней нет
+    ONE_ROOT, ///<Один корень
+    TWO_ROOTS,///<Два корня
+    INFIN = -1///<Бесконечное множество корней
+};
 
-enum Roots {NO_ROOTS, ONE_ROOT, TWO_ROOTS, INFIN = -1};
+///Определяет, можно ли считать число с плавающей запятой нулём
+///@return Близко к нулю или нет
 bool NearZero(double x);
+
 /**
 Решает квадратное уравнение на основе введённых пользователем коэффициентов
 @param [in] eqt Указатель на структуру, содержащую необходимые коэффициенты
 */
 void SolveTheSquare(struct Equation* eqt);
+
 /**
 Выводит корни квадратного уравнения
 @param [in] eqt Указатель на структуру, содержащую необходимые корни и их количество
 */
 void ShowSolution(struct Equation* eqt);
+
 /**
 Выводит меню, в котором пользователь определяет дальнейшие действия
-@param [out] Выбор, сделанный пользователем
+@return Выбор, сделанный пользователем
 */
 int GetChoice(void);
+
 ///Для перехода на новую строку
 void eatline(void);
+
 ///@brief Структура данных, включающая в себя коэффициенты уравнения, корни и количество корней
 struct Equation
 {
-    double a = NAN;
-    double b = NAN;
-    double c = NAN;
-    double x1 = NAN;
-    double x2 = NAN;
-    Roots count = NO_ROOTS;
+    double a = NAN;///<Квадратичный коэффициент
+    double b = NAN;///<Линейный коэффициент
+    double c = NAN;///<Свободный коэффициент
+    double x1 = NAN;///<Первый корень
+    double x2 = NAN;///<Второй корень
+    Roots count = NO_ROOTS;///<Количество корней
 };
