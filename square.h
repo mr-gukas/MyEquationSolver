@@ -42,7 +42,7 @@ struct Equation
     double a = NAN;///<The quadratic coefficient
     double b = NAN;///<The linear coefficient
     double c = NAN;///<The free coefficient
+    Roots count = NO_ROOTS;///<Count of the roots
     double x1 = NAN;///<The first root
     double x2 = NAN;///<The second root
-    Roots count = NO_ROOTS;///<Count of the roots
 };

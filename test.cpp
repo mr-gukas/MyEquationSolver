@@ -1,16 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-#inlcude "square.h"
+#include "square.h"
 
-
-// 1) создать файл с тестами
-//        2
-//        1 2 1 1 -1
-//        1 1 1 0
-// 2) считать этот файл
-// 3) для считанных коэффициентов запустить свою функцию решения квадратного уравнения
-// 4) сравнить ответы полученные из файла и из твоей функции
-
+bool cmproots(double a, double b);
 int main(void)
 {
     FILE* in = NULL;
@@ -18,29 +10,46 @@ int main(void)
     rewind(in);
 
     int tcount = 0;
+    struct Equation standart, current;
+
     fscanf(in, "%d", &tcount);
-
-    struct Equation standart[tcount] = {};
-    struct Equation current[tcount] = {};
-
     for (int i = 0; i < tcount; i++)
     {
-        fscanf("%lf %lf %lf %lf %lf %d", standart[i].a, standart[i].b, standart[i].c,
-        standart[i].x1, standart[i].x2, standart[i].count);
+        fscanf(in, "%lf %lf %lf %d", &standart.a, &standart.b, &standart.c,
+        &standart.count);
 
-        current[i].a = standart[i].a;
-        current[i].b = standart[i].b;
-        current[i].c = standart[i].c;
-        SolveTheSquare(&current[i]);
-
-        if (standart[i].count == current[i].count && NearZero(current[i].x1 - standart[i].x1)\
-        && NearZero(current[i].x2 - standart[i].x2))
-            printf("Test %d was successfully passed", i+1);
+        if (standart.count == NO_ROOTS || standart.count == INFIN)
+            while (fgetc(in) != '\n')
+                continue;
+        else if (standart.count == ONE_ROOT)
+            fscanf(in, "%lf", &standart.x1);
         else
-            printf("Test %d was failed", i+1);
+            fscanf(in, "%lf %lf", &standart.x1, &standart.x2);
+
+        current.a = standart.a;
+        current.b = standart.b;
+        current.c = standart.c;
+        SolveTheSquare(&current);
+
+        if (standart.count == current.count && cmproots(current.x1, standart.x1)\
+        && cmproots(current.x2, standart.x2))
+            printf("Test %d was successfully passed\n", i+1);
+        else
+        {
+            printf("Test %d was failed\n", i+1);
+        }
     }
 
     fclose(in);
 
     return 0;
 }
+
+bool cmproots(double a, double b)
+{
+    if (NearZero(a - b) || (isnan(a) && isnan(b)))
+        return true;
+    else
+        return false;
+}
+
