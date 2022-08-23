@@ -1,4 +1,5 @@
 #include <stdbool.h>
+#include <math.h>
 
 const double CLOSE_TO_ZERO = 0.00001; ///<The value below which we use for zero
 ///@brief A class that determines the number of roots of the equation

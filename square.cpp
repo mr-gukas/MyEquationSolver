@@ -1,6 +1,5 @@
 #include <TXLib.h>
 #include <stdio.h>
-#include <math.h>
 #include "square.h"
 
 int main(void)
@@ -28,42 +27,6 @@ int main(void)
 
     return 0;
 }
-
-void SolveTheSquare(struct Equation* eqt)
-{
-    double a = eqt->a;
-    double b = eqt->b;
-    double c = eqt->c;
-    if (NearZero(a))
-    {
-        if (NearZero(b))
-        {
-            eqt->count = (NearZero(c)) ? INFIN : NO_ROOTS;
-        }
-        else
-        {
-            eqt->x1 = -a / b;
-            if (NearZero(eqt->x1))
-                eqt->x1 = 0.0f;
-            eqt->count = ONE_ROOT;
-        }
-    }
-    else
-    {
-        double discr = b*b - 4*a*c;
-        if (discr < 0.0f)
-        {
-            eqt->count = NO_ROOTS;
-        }
-        else
-        {
-            eqt->x1 = (-b + sqrt(discr)) / (2 * a);
-            eqt->x2 = (-b - sqrt(discr)) / (2 * a);
-            eqt->count = (NearZero(eqt->x1 - eqt->x2)) ? ONE_ROOT : TWO_ROOTS;
-        }
-    }
-}
-
 void ShowSolution(struct Equation* eqt)
 {
 
@@ -120,7 +83,3 @@ void eatline(void)
         continue;
 }
 
-bool NearZero(double x)
-{
-    return (fabs(x) < CLOSE_TO_ZERO) ? true : false;
-}
