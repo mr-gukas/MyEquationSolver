@@ -48,7 +48,7 @@ void SolveTheSquare(double quadr, double line, double free)
         {
             x1 = (-line + sqrt(discr)) / (2 * quadr);
             x2 = (-line - sqrt(discr)) / (2 * quadr);
-            count = (fabs(x1 - x2) <= 0.00001) ? 1 : 2;
+            count = (NearZero(x1 - x2)) ? 1 : 2;
         }
     }
     ShowSolution(count, &x1, &x2);
@@ -73,6 +73,6 @@ void ShowSolution(int count, double * x1, double * x2)
                 break;
         case INFIN: puts("Данное уравнение имеет бесконечное множество решений");
                     break;
-        default: break;
+        default: printf("Ошибка выполнения. Количество корней: %d", count); break;
     }
 }
