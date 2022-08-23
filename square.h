@@ -3,10 +3,10 @@
 ///@brief Класс, определяющий количество корней уравнения
 enum Roots
 {
-    NO_ROOTS, ///<Корней нет
-    ONE_ROOT, ///<Один корень
-    TWO_ROOTS,///<Два корня
-    INFIN = -1///<Бесконечное множество корней
+    NO_ROOTS, ///<There are no root
+    ONE_ROOT, ///<There is one root
+    TWO_ROOTS,///<There are two roots
+    INFIN = -1///<There are infinite number of roots
 };
 
 ///Определяет, можно ли считать число с плавающей запятой нулём
@@ -14,33 +14,33 @@ enum Roots
 bool NearZero(double x);
 
 /**
-Решает квадратное уравнение на основе введённых пользователем коэффициентов
-@param [in] eqt Указатель на структуру, содержащую необходимые коэффициенты
+Solves a quadratic equation based on the coefficients entered by the user
+@param [in] eqt Pointer to the structure containing the necessary coefficients
 */
 void SolveTheSquare(struct Equation* eqt);
 
 /**
-Выводит корни квадратного уравнения
-@param [in] eqt Указатель на структуру, содержащую необходимые корни и их количество
+Outputs the roots of the quadratic equation
+@param [in] eqt Pointer to a structure containing the necessary roots and their number
 */
 void ShowSolution(struct Equation* eqt);
 
 /**
-Выводит меню, в котором пользователь определяет дальнейшие действия
-@return Выбор, сделанный пользователем
+Displays a menu in which the user determines further actions
+@return The choice made by the user
 */
 int GetChoice(void);
 
-///Для перехода на новую строку
+///To switch to a new line
 void eatline(void);
 
-///@brief Структура данных, включающая в себя коэффициенты уравнения, корни и количество корней
+///@brief A data structure that includes equation coefficients, roots, and number of roots
 struct Equation
 {
-    double a = NAN;///<Квадратичный коэффициент
-    double b = NAN;///<Линейный коэффициент
-    double c = NAN;///<Свободный коэффициент
-    double x1 = NAN;///<Первый корень
-    double x2 = NAN;///<Второй корень
-    Roots count = NO_ROOTS;///<Количество корней
+    double a = NAN;///<The quadratic coefficient
+    double b = NAN;///<The linear coefficient
+    double c = NAN;///<The free coefficient
+    double x1 = NAN;///<The first root
+    double x2 = NAN;///<The second root
+    Roots count = NO_ROOTS;///<Count of the roots
 };
