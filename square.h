@@ -1,6 +1,7 @@
 #include <stdbool.h>
 
-///@brief Класс, определяющий количество корней уравнения
+const double CLOSE_TO_ZERO = 0.00001; ///<The value below which we use for zero
+///@brief A class that determines the number of roots of the equation
 enum Roots
 {
     NO_ROOTS, ///<There are no root
@@ -9,8 +10,8 @@ enum Roots
     INFIN = -1///<There are infinite number of roots
 };
 
-///Определяет, можно ли считать число с плавающей запятой нулём
-///@return Близко к нулю или нет
+///Determines whether a floating-point number can be considered zero
+///@return Close to zero or not
 bool NearZero(double x);
 
 /**

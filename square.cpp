@@ -122,5 +122,5 @@ void eatline(void)
 
 bool NearZero(double x)
 {
-    return (fabs(x) < 0.00001) ? true : false;
+    return (fabs(x) < CLOSE_TO_ZERO) ? true : false;
 }
