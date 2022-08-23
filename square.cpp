@@ -1,35 +1,26 @@
 #include <TXLib.h>
 #include <stdio.h>
 #include <math.h>
-#include <stdbool.h>
-
-enum roots {NO_ROOTS, ONE_ROOT, TWO_ROOTS, INFIN = -1};
-bool NearZero(double x);
-roots SolveTheSquare(double quadr, double line, double free, double* x1, double* x2);
-void ShowSolution(int count, double* x1, double* x2);
-int GetChoice(void);
-void eatline(void);
+#include "square.h"
 
 int main(void)
 {
-    double quadr = NAN, line = NAN, free = NAN;
-    double x1 = NAN, x2 = NAN;
+    struct Equation eqt;
     int choice = 0;
-    roots count = NO_ROOTS;
 
     while ((choice = GetChoice()) != 'b')
     {
         puts("Введите по порядку квадратный, линейный и свободный коэффициенты квадратного уравнения:");
 
-        if (scanf("%lf %lf %lf", &quadr, &line, &free) != 3)
+        if (scanf("%lf %lf %lf", &eqt.a, &eqt.b, &eqt.c) != 3)
         {
             eatline();
-            printf("Ошибка ввода! Попробуйте заново\n");
+            fprintf(stderr, "Ошибка ввода! Попробуйте заново\n");
         }
         else
         {
-            count = SolveTheSquare(quadr, line, free, &x1, &x2);
-            ShowSolution(count, &x1, &x2);
+            SolveTheSquare(&eqt);
+            ShowSolution(&eqt);
             eatline();
         }
     }
@@ -38,62 +29,64 @@ int main(void)
     return 0;
 }
 
-roots SolveTheSquare(double quadr, double line, double free, double* x1, double* x2)
+void SolveTheSquare(struct Equation* eqt)
 {
-    if (NearZero(quadr))
+    double a = eqt->a;
+    double b = eqt->b;
+    double c = eqt->c;
+    if (NearZero(a))
     {
-        if (NearZero(line))
+        if (NearZero(b))
         {
-            return (NearZero(free)) ? INFIN : NO_ROOTS;
+            eqt->count = (NearZero(c)) ? INFIN : NO_ROOTS;
         }
         else
         {
-            *x1 = -free / line;
-            if (NearZero(*x1))
-                *x1 = 0.0f;
-            return ONE_ROOT;
+            eqt->x1 = -a / b;
+            if (NearZero(eqt->x1))
+                eqt->x1 = 0.0f;
+            eqt->count = ONE_ROOT;
         }
     }
     else
     {
-        double discr = line*line - 4*quadr*free;
+        double discr = b*b - 4*a*c;
         if (discr < 0.0f)
         {
-            return NO_ROOTS;
+            eqt->count = NO_ROOTS;
         }
         else
         {
-            *x1 = (-line + sqrt(discr)) / (2 * quadr);
-            *x2 = (-line - sqrt(discr)) / (2 * quadr);
-            return (NearZero(*x1 - *x2)) ? ONE_ROOT : TWO_ROOTS;
+            eqt->x1 = (-b + sqrt(discr)) / (2 * a);
+            eqt->x2 = (-b - sqrt(discr)) / (2 * a);
+            eqt->count = (NearZero(eqt->x1 - eqt->x2)) ? ONE_ROOT : TWO_ROOTS;
         }
     }
 }
 
-void ShowSolution(int count, double* x1, double* x2)
+void ShowSolution(struct Equation* eqt)
 {
-    assert (x1 != NULL);
-    assert (x2 != NULL);
-    assert (x1 != x2);
 
-    switch (count)
+    assert (eqt != NULL);
+
+    switch (eqt->count)
     {
         case NO_ROOTS:
             printf("Данное уравнение не имеет решений\n");
             break;
         case ONE_ROOT:
-            printf("Данное уравнение имеет единственное решение: x = %lf\n", *x1);
+            printf("Данное уравнение имеет единственное решение: x = %lf\n", eqt->x1);
             break;
         case TWO_ROOTS:
             printf("Данное уравнение имеет два решения:\n");
-            printf("    x1 = %lf\n", *x1);
-            printf("    x2 = %lf\n", *x2);
+            printf("    x1 = %lf\n", eqt->x1);
+            printf("    x2 = %lf\n", eqt->x2);
             break;
         case INFIN:
             puts("Данное уравнение имеет бесконечное множество решений");
             break;
         default:
-            printf("Ошибка. Количество корней: %d\n", count);
+            fprintf(stderr, "Ошибка. Количество корней: %d\n", eqt->count);
     }
 }
 
@@ -104,7 +97,8 @@ int GetChoice(void)
     printf("****Выберите операцию:\n");
     printf("a)Решить квадратное уравнение        b)Выйти из программы\n");
 
-    while ((choice = getchar()) != EOF) {
+    while ((choice = getchar()) != EOF)
+    {
         eatline();
         if (strchr("ab", choice) == NULL)
         {
