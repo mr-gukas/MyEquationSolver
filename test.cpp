@@ -1,16 +1,23 @@
 #include "test.h"
 
-int main(void)
+int main(int argc, char* argv[])
 {
-    FILE* in = fopen(TESTFILE, "r");
-    if (in == NULL)
+    if (argc != 2)
     {
-        fprintf(stderr, "The file was not detected. Try again");
+        assert(0 && "Command line arguments entered incorrectly");
     }
     else
     {
-        testSolveTheSquare(in);
-        fclose(in);
+        FILE* in = fopen(argv[1], "r");
+        if (in == NULL)
+        {
+            assert (0 && "The file was not detected. Try again");
+        }
+        else
+        {
+            testSolveTheSquare(in);
+            fclose(in);
+        }
     }
 
     return 0;
@@ -34,9 +41,7 @@ void testSolveTheSquare(FILE* in)
         int nRoots = 0;
         if (fscanf(in, "%lf %lf %lf %d", &truly.a, &truly.b, &truly.c, &nRoots) != 4)
         {
-            fprintf(stderr, "An error in the test data. Curtailing testing");
-            eatLine(in);
-            break;
+            assert (0 && "An error in the test data. Curtailing testing");
         }
 
         truly.count = (Roots) nRoots;
@@ -49,18 +54,14 @@ void testSolveTheSquare(FILE* in)
         {
             if (fscanf(in, "%lf", &truly.x1) != 1)
             {
-                fprintf(stderr, "An error in the test data. Curtailing testing");
-                eatLine(in);
-                break;
+                assert(0 && "An error in the test data. Curtailing testing");
             }
         }
         else
         {
             if (fscanf(in, "%lf %lf", &truly.x1, &truly.x2) != 2)
             {
-                fprintf(stderr, "An error in the test data. Curtailing testing");
-                eatLine(in);
-                break;
+                assert (0 && "An error in the test data. Curtailing testing");
             }
             swapDescending(&truly.x1, &truly.x2);
         }
@@ -127,20 +128,24 @@ void printRootsCount(const struct Equation* eqt)
         case NO_ROOTS:
             printf("no roots\n");
             break;
+
         case ONE_ROOT:
             printf("one root\n");
             printf("          The root: %lg\n",        eqt->x1);
             break;
+
         case TWO_ROOTS:
             printf("two roots\n");
             printf("          The first  root: %lg\n", eqt->x1);
             printf("          The second root: %lg\n", eqt->x2);
             break;
+
         case INFIN:
             printf("infinite number of solutions\n");
             break;
+
         default:
-            fprintf(stderr, "Computational error\n");
+            assert(0 && "Computational error");
     }
 }
 

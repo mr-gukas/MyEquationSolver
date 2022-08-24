@@ -22,9 +22,6 @@ void testSolveTheSquare(FILE* in);
  */
 void printRootsCount(const struct Equation* eqt);
 
-///@brief Name of the test data file
-const char TESTFILE[] = "test.txt";
-
 /**
  * @brief Make red output text
  */

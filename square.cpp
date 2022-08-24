@@ -36,17 +36,21 @@ void showSolution(const struct Equation* eqt)
         case NO_ROOTS:
             printf("This equation has no solutions\n");
             break;
+
         case ONE_ROOT:
             printf("This equation has one solution: x = %lg\n", eqt->x1);
             break;
+
         case TWO_ROOTS:
             printf("This equation has two solutions:\n");
             printf("    x1 = %lg\n", eqt->x1);
             printf("    x2 = %lg\n", eqt->x2);
             break;
+
         case INFIN:
             puts("This equation has an infinite number of solutions");
             break;
+
         default:
             fprintf(stderr, "Error. Number of roots: %d\n", eqt->count);
     }
