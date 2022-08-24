@@ -1,0 +1,145 @@
+\hypertarget{square_8h}{}\doxysection{square.\+h File Reference}
+\label{square_8h}\index{square.h@{square.h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_equation}{Equation}}
+\begin{DoxyCompactList}\small\item\em A data structure that includes equation coefficients, roots, and number of roots. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} \{ \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692aab9a321da349ac1355b717745736ad90c}{NO\+\_\+\+ROOTS}}
+, \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692aa6700c0f6efd23571cb22aefd2510b1cf}{ONE\+\_\+\+ROOT}}
+, \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692aa876622d3c0b008da13a3685c64714e81}{TWO\+\_\+\+ROOTS}}
+, \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692aa1972e87eaf98c1ed76d9e1997132a56d}{INFIN}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em A class that determines the number of roots of the equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{square_8h_a133ed687f8460c7757b3b2bec3521a10}{near\+Zero}} (double x)
+\item 
+void \mbox{\hyperlink{square_8h_aab36383b91283d94f28f5487f7ac7e65}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+\item 
+void \mbox{\hyperlink{square_8h_a94a5369ea8bbbcf1eb3134a98ebe69a3}{show\+Solution}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+\item 
+int \mbox{\hyperlink{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}{get\+Choice}} (void)
+\item 
+void \mbox{\hyperlink{square_8h_a9969f44ecbced579e3b3b0acc78073df}{eat\+Line}} (FILE $\ast$file)
+\item 
+void \mbox{\hyperlink{square_8h_a11c41bf886ae9da12c23cc7299c98648}{swap\+Big}} (double $\ast$x1, double $\ast$x2)
+\begin{DoxyCompactList}\small\item\em A function that swaps two real numbers, if the second is greater than the first. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const double \mbox{\hyperlink{square_8h_a0420874cdbc18b470bc914c8619096c6}{CLOSE\+\_\+\+TO\+\_\+\+ZERO}} = 0.\+00001
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{square_8h_a34f6126547cfdaeca6fb82d45a97692a}\label{square_8h_a34f6126547cfdaeca6fb82d45a97692a}} 
+\index{square.h@{square.h}!Roots@{Roots}}
+\index{Roots@{Roots}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{Roots}{Roots}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}}}
+
+
+
+A class that determines the number of roots of the equation. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ROOTS@{NO\_ROOTS}!square.h@{square.h}}\index{square.h@{square.h}!NO\_ROOTS@{NO\_ROOTS}}}\mbox{\Hypertarget{square_8h_a34f6126547cfdaeca6fb82d45a97692aab9a321da349ac1355b717745736ad90c}\label{square_8h_a34f6126547cfdaeca6fb82d45a97692aab9a321da349ac1355b717745736ad90c}} 
+NO\+\_\+\+ROOTS&There are no root. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ONE\_ROOT@{ONE\_ROOT}!square.h@{square.h}}\index{square.h@{square.h}!ONE\_ROOT@{ONE\_ROOT}}}\mbox{\Hypertarget{square_8h_a34f6126547cfdaeca6fb82d45a97692aa6700c0f6efd23571cb22aefd2510b1cf}\label{square_8h_a34f6126547cfdaeca6fb82d45a97692aa6700c0f6efd23571cb22aefd2510b1cf}} 
+ONE\+\_\+\+ROOT&There is one root. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TWO\_ROOTS@{TWO\_ROOTS}!square.h@{square.h}}\index{square.h@{square.h}!TWO\_ROOTS@{TWO\_ROOTS}}}\mbox{\Hypertarget{square_8h_a34f6126547cfdaeca6fb82d45a97692aa876622d3c0b008da13a3685c64714e81}\label{square_8h_a34f6126547cfdaeca6fb82d45a97692aa876622d3c0b008da13a3685c64714e81}} 
+TWO\+\_\+\+ROOTS&There are two roots. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INFIN@{INFIN}!square.h@{square.h}}\index{square.h@{square.h}!INFIN@{INFIN}}}\mbox{\Hypertarget{square_8h_a34f6126547cfdaeca6fb82d45a97692aa1972e87eaf98c1ed76d9e1997132a56d}\label{square_8h_a34f6126547cfdaeca6fb82d45a97692aa1972e87eaf98c1ed76d9e1997132a56d}} 
+INFIN&There are infinite number of roots. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{square_8h_a9969f44ecbced579e3b3b0acc78073df}\label{square_8h_a9969f44ecbced579e3b3b0acc78073df}} 
+\index{square.h@{square.h}!eatLine@{eatLine}}
+\index{eatLine@{eatLine}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{eatLine()}{eatLine()}}
+{\footnotesize\ttfamily void eat\+Line (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+
+To switch to a new line 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Where} & to eat the line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}\label{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}} 
+\index{square.h@{square.h}!getChoice@{getChoice}}
+\index{getChoice@{getChoice}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{getChoice()}{getChoice()}}
+{\footnotesize\ttfamily int get\+Choice (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Displays a menu in which the user determines further actions \begin{DoxyReturn}{Returns}
+The choice made by the user 
+\end{DoxyReturn}
+\mbox{\Hypertarget{square_8h_a133ed687f8460c7757b3b2bec3521a10}\label{square_8h_a133ed687f8460c7757b3b2bec3521a10}} 
+\index{square.h@{square.h}!nearZero@{nearZero}}
+\index{nearZero@{nearZero}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
+{\footnotesize\ttfamily bool near\+Zero (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+Determines whether a floating-\/point number can be considered zero \begin{DoxyReturn}{Returns}
+Close to zero or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{square_8h_a94a5369ea8bbbcf1eb3134a98ebe69a3}\label{square_8h_a94a5369ea8bbbcf1eb3134a98ebe69a3}} 
+\index{square.h@{square.h}!showSolution@{showSolution}}
+\index{showSolution@{showSolution}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{showSolution()}{showSolution()}}
+{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+
+Outputs the roots of the quadratic equation 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em eqt} & Pointer to a structure containing the necessary roots and their number \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square_8h_aab36383b91283d94f28f5487f7ac7e65}\label{square_8h_aab36383b91283d94f28f5487f7ac7e65}} 
+\index{square.h@{square.h}!solveTheSquare@{solveTheSquare}}
+\index{solveTheSquare@{solveTheSquare}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{solveTheSquare()}{solveTheSquare()}}
+{\footnotesize\ttfamily void solve\+The\+Square (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+
+Solves a quadratic equation based on the coefficients entered by the user 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em eqt} & Pointer to the structure containing the necessary coefficients \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{square_8h_a11c41bf886ae9da12c23cc7299c98648}\label{square_8h_a11c41bf886ae9da12c23cc7299c98648}} 
+\index{square.h@{square.h}!swapBig@{swapBig}}
+\index{swapBig@{swapBig}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{swapBig()}{swapBig()}}
+{\footnotesize\ttfamily void swap\+Big (\begin{DoxyParamCaption}\item[{double $\ast$}]{x1,  }\item[{double $\ast$}]{x2 }\end{DoxyParamCaption})}
+
+
+
+A function that swaps two real numbers, if the second is greater than the first. 
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{square_8h_a0420874cdbc18b470bc914c8619096c6}\label{square_8h_a0420874cdbc18b470bc914c8619096c6}} 
+\index{square.h@{square.h}!CLOSE\_TO\_ZERO@{CLOSE\_TO\_ZERO}}
+\index{CLOSE\_TO\_ZERO@{CLOSE\_TO\_ZERO}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{CLOSE\_TO\_ZERO}{CLOSE\_TO\_ZERO}}
+{\footnotesize\ttfamily const double CLOSE\+\_\+\+TO\+\_\+\+ZERO = 0.\+00001}
+
+The value below which we use for zero 

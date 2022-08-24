@@ -1,33 +1,32 @@
-#include <TXLib.h>
-#include <stdio.h>
 #include "square.h"
+#include <string.h>
 
 int main(void)
 {
     struct Equation eqt;
     int choice = 0;
 
-    while ((choice = GetChoice()) != 'b')
+    while ((choice = GetChoice()) != 'e')
     {
-        puts("Введите по порядку квадратный, линейный и свободный коэффициенты квадратного уравнения:");
+        puts("Enter the square, linear and free coefficients of the quadratic equation:");
 
         if (scanf("%lf %lf %lf", &eqt.a, &eqt.b, &eqt.c) != 3)
         {
-            eatline();
-            fprintf(stderr, "Ошибка ввода! Попробуйте заново\n");
+            eatLine(stdin);
+            fprintf(stderr, "Input error! Try again\n");
         }
         else
         {
-            SolveTheSquare(&eqt);
-            ShowSolution(&eqt);
-            eatline();
+            solveTheSquare(&eqt);
+            showSolution(&eqt);
+            eatLine(stdin);
         }
     }
-    puts("Программа завершена");
+    puts("The program is completed");
 
     return 0;
 }
-void ShowSolution(struct Equation* eqt)
+void showSolution(struct Equation* eqt)
 {
 
     assert (eqt != NULL);
@@ -35,51 +34,48 @@ void ShowSolution(struct Equation* eqt)
     switch (eqt->count)
     {
         case NO_ROOTS:
-            printf("Данное уравнение не имеет решений\n");
+            printf("This equation has no solutions\n");
             break;
         case ONE_ROOT:
-            printf("Данное уравнение имеет единственное решение: x = %lf\n", eqt->x1);
+            printf("This equation has one solution: x = %lg\n", eqt->x1);
             break;
         case TWO_ROOTS:
-            printf("Данное уравнение имеет два решения:\n");
-            printf("    x1 = %lf\n", eqt->x1);
-            printf("    x2 = %lf\n", eqt->x2);
+            printf("This equation has two solutions:\n");
+            printf("    x1 = %lg\n", eqt->x1);
+            printf("    x2 = %lg\n", eqt->x2);
             break;
         case INFIN:
-            puts("Данное уравнение имеет бесконечное множество решений");
+            puts("This equation has an infinite number of solutions");
             break;
         default:
-            fprintf(stderr, "Ошибка. Количество корней: %d\n", eqt->count);
+            fprintf(stderr, "Error. Number of roots: %d\n", eqt->count);
     }
 }
 
-int GetChoice(void)
+int getChoice(void)
 {
     int choice = 0;
 
-    printf("****Выберите операцию:\n");
-    printf("a)Решить квадратное уравнение        b)Выйти из программы\n");
+    printf("****Select an operation:\n");
+    printf("s)Solve the quadratic equation        e)Exit the program\n");
 
     while ((choice = getchar()) != EOF)
     {
-        eatline();
-        if (strchr("ab", choice) == NULL)
+        eatLine(stdin);
+        if (strchr("se", choice) == NULL)
         {
-            puts("Введено неверное значение. Введите a или b:");
+            puts("Invalid value entered. Enter a or b:");
         }
         else
             break;
     }
 
     if (choice == EOF)
-        choice = 'b';
+    {
+        printf("The end of the file has been reached\n");
+        choice = 'e';
+    }
 
     return choice;
-}
-
-void eatline(void)
-{
-    while (getchar() != '\n')
-        continue;
 }
 

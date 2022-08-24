@@ -1,22 +1,26 @@
-#include <math.h>
 #include "square.h"
 
-void SolveTheSquare(struct Equation* eqt)
+void solveTheSquare(struct Equation* eqt)
 {
+
+    assert (eqt != NULL);
+
     double a = eqt->a;
     double b = eqt->b;
     double c = eqt->c;
-    if (NearZero(a))
+    if (nearZero(a))
     {
-        if (NearZero(b))
+        if (nearZero(b))
         {
-            eqt->count = (NearZero(c)) ? INFIN : NO_ROOTS;
+            eqt->count = (nearZero(c)) ? INFIN : NO_ROOTS;
         }
         else
         {
             eqt->x1 = -c / b;
-            if (NearZero(eqt->x1))
+            if (nearZero(eqt->x1))
+            {
                 eqt->x1 = 0.0f;
+            }
             eqt->count = ONE_ROOT;
         }
     }
@@ -31,19 +35,44 @@ void SolveTheSquare(struct Equation* eqt)
         {
             eqt->x1 = (-b + sqrt(discr)) / (2 * a);
             eqt->x2 = (-b - sqrt(discr)) / (2 * a);
-            if (NearZero(eqt->x1 - eqt->x2))
+            if (nearZero(eqt->x1 - eqt->x2))
             {
                 eqt->count = ONE_ROOT;
                 eqt->x2 = NAN;
             }
             else
+            {
+                swapBig(&(eqt->x1), &(eqt->x2));
                 eqt->count = TWO_ROOTS;
+            }
         }
     }
 }
 
-bool NearZero(double x)
+bool nearZero(double x)
 {
     return (fabs(x) < CLOSE_TO_ZERO) ? true : false;
 }
+
+void eatLine(FILE* file)
+{
+    assert(file != NULL);
+
+    while (fgetc(file) != '\n')
+        continue;
+}
+
+void swapBig(double* x1, double* x2)
+{
+    if (*x1 < *x2)
+    {
+        double temp = NAN;
+        temp = *x2;
+        *x2 = *x1;
+        *x1 = temp;
+    }
+}
+
+
+
 
