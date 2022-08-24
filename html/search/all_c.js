@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['test_2ecpp_22',['test.cpp',['../test_8cpp.html',1,'']]],
-  ['test_2eh_23',['test.h',['../test_8h.html',1,'']]],
-  ['testfile_24',['TESTFILE',['../test_8h.html#acbe3904c3bbaff935a9ca3536cd9a986',1,'test.h']]],
-  ['testsolvethesquare_25',['testSolveTheSquare',['../test_8cpp.html#ac2d764ea9a71d7a91a86bb76b869d7a0',1,'testSolveTheSquare(FILE *in):&#160;test.cpp'],['../test_8h.html#ac2d764ea9a71d7a91a86bb76b869d7a0',1,'testSolveTheSquare(FILE *in):&#160;test.cpp']]],
-  ['two_5froots_26',['TWO_ROOTS',['../square_8h.html#a34f6126547cfdaeca6fb82d45a97692aa876622d3c0b008da13a3685c64714e81',1,'square.h']]]
+  ['setgreen_18',['setGreen',['../test_8cpp.html#a23fef7dde8710353ba3c10dab8efec6f',1,'setGreen(HANDLE hConsole):&#160;test.cpp'],['../test_8h.html#a23fef7dde8710353ba3c10dab8efec6f',1,'setGreen(HANDLE hConsole):&#160;test.cpp']]],
+  ['setred_19',['setRed',['../test_8cpp.html#a54c418dabba7b5eb1781a27646d6a8eb',1,'setRed(HANDLE hConsole):&#160;test.cpp'],['../test_8h.html#a54c418dabba7b5eb1781a27646d6a8eb',1,'setRed(HANDLE hConsole):&#160;test.cpp']]],
+  ['showsolution_20',['showSolution',['../square_8cpp.html#a02f10265d0e3d4e9d1b9b509c5af61f6',1,'showSolution(const struct Equation *eqt):&#160;square.cpp'],['../square_8h.html#a02f10265d0e3d4e9d1b9b509c5af61f6',1,'showSolution(const struct Equation *eqt):&#160;square.cpp']]],
+  ['solvethesquare_21',['solveTheSquare',['../func_8cpp.html#aab36383b91283d94f28f5487f7ac7e65',1,'solveTheSquare(struct Equation *eqt):&#160;func.cpp'],['../square_8h.html#aab36383b91283d94f28f5487f7ac7e65',1,'solveTheSquare(struct Equation *eqt):&#160;func.cpp']]],
+  ['square_2ecpp_22',['square.cpp',['../square_8cpp.html',1,'']]],
+  ['square_2eh_23',['square.h',['../square_8h.html',1,'']]],
+  ['swapdescending_24',['swapDescending',['../func_8cpp.html#a7b270b4d27e59d0d7d8838a4d821a970',1,'swapDescending(double *x1, double *x2):&#160;func.cpp'],['../square_8h.html#a7b270b4d27e59d0d7d8838a4d821a970',1,'swapDescending(double *x1, double *x2):&#160;func.cpp']]]
 ];

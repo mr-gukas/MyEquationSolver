@@ -25,19 +25,19 @@ bool \mbox{\hyperlink{square_8h_a133ed687f8460c7757b3b2bec3521a10}{near\+Zero}} 
 \begin{DoxyCompactList}\small\item\em Determines whether a floating-\/point number can be considered zero. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{square_8h_aab36383b91283d94f28f5487f7ac7e65}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
 \begin{DoxyCompactList}\small\item\em Solves a quadratic equation based on the coefficients entered by the user. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{square_8h_a94a5369ea8bbbcf1eb3134a98ebe69a3}{show\+Solution}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+void \mbox{\hyperlink{square_8h_a02f10265d0e3d4e9d1b9b509c5af61f6}{show\+Solution}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
 \begin{DoxyCompactList}\small\item\em Outputs the roots of the quadratic equation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}{get\+Choice}} (void)
 \begin{DoxyCompactList}\small\item\em Displays a menu in which the user determines further actions. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{square_8h_a9969f44ecbced579e3b3b0acc78073df}{eat\+Line}} (FILE $\ast$file)
 \begin{DoxyCompactList}\small\item\em To switch to a new line. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{square_8h_a11c41bf886ae9da12c23cc7299c98648}{swap\+Big}} (double $\ast$x1, double $\ast$x2)
+void \mbox{\hyperlink{square_8h_a7b270b4d27e59d0d7d8838a4d821a970}{swap\+Descending}} (double $\ast$x1, double $\ast$x2)
 \begin{DoxyCompactList}\small\item\em A function that swaps two real numbers, if the second is greater than the first. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const double \mbox{\hyperlink{square_8h_a0420874cdbc18b470bc914c8619096c6}{CLOSE\+\_\+\+TO\+\_\+\+ZERO}} = 0.\+00001
-\end{DoxyCompactItemize}
+const double \mbox{\hyperlink{square_8h_a0420874cdbc18b470bc914c8619096c6}{CLOSE\+\_\+\+TO\+\_\+\+ZERO}} = 1e-\/5
+\begin{DoxyCompactList}\small\item\em The value below which we use as zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -121,11 +121,11 @@ Determines whether a floating-\/point number can be considered zero.
 \begin{DoxyReturn}{Returns}
 Close to zero or not 
 \end{DoxyReturn}
-\mbox{\Hypertarget{square_8h_a94a5369ea8bbbcf1eb3134a98ebe69a3}\label{square_8h_a94a5369ea8bbbcf1eb3134a98ebe69a3}} 
+\mbox{\Hypertarget{square_8h_a02f10265d0e3d4e9d1b9b509c5af61f6}\label{square_8h_a02f10265d0e3d4e9d1b9b509c5af61f6}} 
 \index{square.h@{square.h}!showSolution@{showSolution}}
 \index{showSolution@{showSolution}!square.h@{square.h}}
 \doxysubsubsection{\texorpdfstring{showSolution()}{showSolution()}}
-{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
 
 
 
@@ -157,11 +157,11 @@ Solves a quadratic equation based on the coefficients entered by the user.
 \begin{DoxyReturn}{Returns}
 Returns nothing 
 \end{DoxyReturn}
-\mbox{\Hypertarget{square_8h_a11c41bf886ae9da12c23cc7299c98648}\label{square_8h_a11c41bf886ae9da12c23cc7299c98648}} 
-\index{square.h@{square.h}!swapBig@{swapBig}}
-\index{swapBig@{swapBig}!square.h@{square.h}}
-\doxysubsubsection{\texorpdfstring{swapBig()}{swapBig()}}
-{\footnotesize\ttfamily void swap\+Big (\begin{DoxyParamCaption}\item[{double $\ast$}]{x1,  }\item[{double $\ast$}]{x2 }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{square_8h_a7b270b4d27e59d0d7d8838a4d821a970}\label{square_8h_a7b270b4d27e59d0d7d8838a4d821a970}} 
+\index{square.h@{square.h}!swapDescending@{swapDescending}}
+\index{swapDescending@{swapDescending}!square.h@{square.h}}
+\doxysubsubsection{\texorpdfstring{swapDescending()}{swapDescending()}}
+{\footnotesize\ttfamily void swap\+Descending (\begin{DoxyParamCaption}\item[{double $\ast$}]{x1,  }\item[{double $\ast$}]{x2 }\end{DoxyParamCaption})}
 
 
 
@@ -182,6 +182,9 @@ Returns nothing
 \index{square.h@{square.h}!CLOSE\_TO\_ZERO@{CLOSE\_TO\_ZERO}}
 \index{CLOSE\_TO\_ZERO@{CLOSE\_TO\_ZERO}!square.h@{square.h}}
 \doxysubsubsection{\texorpdfstring{CLOSE\_TO\_ZERO}{CLOSE\_TO\_ZERO}}
-{\footnotesize\ttfamily const double CLOSE\+\_\+\+TO\+\_\+\+ZERO = 0.\+00001}
+{\footnotesize\ttfamily const double CLOSE\+\_\+\+TO\+\_\+\+ZERO = 1e-\/5}
 
-The value below which we use for zero 
+
+
+The value below which we use as zero. 
+

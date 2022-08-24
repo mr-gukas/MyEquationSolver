@@ -3,10 +3,10 @@
 
 int main(void)
 {
-    struct Equation eqt;
+    struct Equation eqt = {};
     int choice = 0;
 
-    while ((choice = GetChoice()) != 'e')
+    while ((choice = getChoice()) != 'q')
     {
         puts("Enter the square, linear and free coefficients of the quadratic equation:");
 
@@ -26,7 +26,7 @@ int main(void)
 
     return 0;
 }
-void showSolution(struct Equation* eqt)
+void showSolution(const struct Equation* eqt)
 {
 
     assert (eqt != NULL);
@@ -57,14 +57,14 @@ int getChoice(void)
     int choice = 0;
 
     printf("****Select an operation:\n");
-    printf("s)Solve the quadratic equation        e)Exit the program\n");
+    printf("s)Solve the quadratic equation        q)Quit the program\n");
 
     while ((choice = getchar()) != EOF)
     {
         eatLine(stdin);
-        if (strchr("se", choice) == NULL)
+        if (strchr("sq", choice) == NULL)
         {
-            puts("Invalid value entered. Enter a or b:");
+            puts("Invalid value entered. Enter s or q:");
         }
         else
             break;
@@ -73,7 +73,7 @@ int getChoice(void)
     if (choice == EOF)
     {
         printf("The end of the file has been reached\n");
-        choice = 'e';
+        choice = 'q';
     }
 
     return choice;

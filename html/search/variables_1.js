@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['b_46',['b',['../struct_equation.html#a2ca528c1ae5ec73cc926a327136cfc6b',1,'Equation']]]
+  ['b_52',['b',['../struct_equation.html#a2ca528c1ae5ec73cc926a327136cfc6b',1,'Equation']]]
 ];

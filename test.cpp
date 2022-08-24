@@ -1,5 +1,4 @@
 #include "test.h"
-#include <windows.h>
 
 int main(void)
 {
@@ -12,9 +11,9 @@ int main(void)
     {
         testSolveTheSquare(in);
         fclose(in);
-
-        return 0;
     }
+
+    return 0;
 }
 
 void testSolveTheSquare(FILE* in)
@@ -25,16 +24,22 @@ void testSolveTheSquare(FILE* in)
 
     rewind(in);
 
-    size_t tcount = 0;
+    size_t tCount = 0;
     size_t passed = 0;
-    struct Equation truly, current;
+    struct Equation truly = {}, current = {};
 
-    fscanf(in, "%u", &tcount);
-    for (size_t i = 0; i < tcount; i++)
+    fscanf(in, "%u", &tCount);
+    for (size_t i = 0; i < tCount; i++)
     {
-        int nroots = 0;
-        fscanf(in, "%lf %lf %lf %d", &truly.a, &truly.b, &truly.c, &nroots);
-        truly.count = (Roots) nroots;
+        int nRoots = 0;
+        if (fscanf(in, "%lf %lf %lf %d", &truly.a, &truly.b, &truly.c, &nRoots) != 4)
+        {
+            fprintf(stderr, "An error in the test data. Curtailing testing");
+            eatLine(in);
+            break;
+        }
+
+        truly.count = (Roots) nRoots;
 
         if (truly.count == NO_ROOTS || truly.count == INFIN)
         {
@@ -57,7 +62,7 @@ void testSolveTheSquare(FILE* in)
                 eatLine(in);
                 break;
             }
-            swapBig(&(truly.x1), &(truly.x2));
+            swapDescending(&truly.x1, &truly.x2);
         }
 
         current.a = truly.a;
@@ -69,53 +74,53 @@ void testSolveTheSquare(FILE* in)
             cmpRoots(current.x1, truly.x1) &&
             cmpRoots(current.x2, truly.x2))
         {
-            printf("Test num.%u was successfully ", i + 1);
+            printf("Test number %u was successfully ", i + 1);
 
-            SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+            setGreen(hConsole);
 
             printf("passed\n");
             passed++;
 
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+            colorReset(hConsole);
         }
         else
         {
-            printf("Test num.%u was", i + 1);
+            printf("Test number %u was successfully ", i + 1);
 
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+            setRed(hConsole);
 
             printf("failed\n");
-            printf("EXPECTED: Count of the roots: ");
-            rootsCount(&truly);
-            printf("RECEIVED: Count of the roots: ");
-            rootsCount(&current);
-            SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+
+            colorReset(hConsole);
+
+            printf("EXPECTED: Count of the roots: "); printRootsCount(&truly);
+            printf("RECEIVED: Count of the roots: "); printRootsCount(&current);
         }
     }
-    if (passed == tcount)
+    if (passed == tCount)
     {
-        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+        setGreen(hConsole);
 
-        printf("Passed all tests! (%u/%u)\n", tcount, tcount);
+        printf("Passed all tests! (%u/%u)\n", tCount, tCount);
 
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        colorReset(hConsole);
     }
     else
     {
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+        setRed(hConsole);
 
-        printf("Not all tests passed! (%u/%u)\n", passed, tcount);
+        printf("Tests passed: %u/%u\n", passed, tCount);
 
-        SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+        colorReset(hConsole);
     }
 }
 
 bool cmpRoots(double a, double b)
 {
-    return (nearZero(a - b) || (isnan(a) && isnan(b)));
+    return nearZero(a - b) || (isnan(a) && isnan(b));
 }
 
-void rootsCount(struct Equation* eqt)
+void printRootsCount(const struct Equation* eqt)
 {
     switch (eqt->count)
     {
@@ -124,7 +129,7 @@ void rootsCount(struct Equation* eqt)
             break;
         case ONE_ROOT:
             printf("one root\n");
-            printf("          The root: %lg\n", eqt->x1);
+            printf("          The root: %lg\n",        eqt->x1);
             break;
         case TWO_ROOTS:
             printf("two roots\n");
@@ -137,5 +142,20 @@ void rootsCount(struct Equation* eqt)
         default:
             fprintf(stderr, "Computational error\n");
     }
+}
+
+void setRed(HANDLE hConsole)
+{
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+}
+
+void setGreen(HANDLE hConsole)
+{
+    SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+}
+
+void colorReset(HANDLE hConsole)
+{
+    SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 }
 

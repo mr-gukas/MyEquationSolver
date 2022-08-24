@@ -2,6 +2,7 @@
 \label{test_8h}\index{test.h@{test.h}}
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}square.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -9,8 +10,14 @@ bool \mbox{\hyperlink{test_8h_ab716c2bce0ef3b4f6499f662fc15d440}{cmp\+Roots}} (d
 \begin{DoxyCompactList}\small\item\em A function that checks whether the roots obtained as a result of calculations match the real roots. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{test_8h_ac2d764ea9a71d7a91a86bb76b869d7a0}{test\+Solve\+The\+Square}} (FILE $\ast$in)
 \begin{DoxyCompactList}\small\item\em A function that tests data received from a file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{test_8h_aea3bf12997841563be1a303d4754db90}{roots\+Count}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{test_8h_a7c6f41596e70c32e4d85dd165072ebbb}{print\+Roots\+Count}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+\item 
+void \mbox{\hyperlink{test_8h_a54c418dabba7b5eb1781a27646d6a8eb}{set\+Red}} (HANDLE h\+Console)
+\begin{DoxyCompactList}\small\item\em Make red output text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8h_a23fef7dde8710353ba3c10dab8efec6f}{set\+Green}} (HANDLE h\+Console)
+\begin{DoxyCompactList}\small\item\em Make green output text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8h_a2142775936948fd1a7d81ba0975a562d}{color\+Reset}} (HANDLE h\+Console)
+\begin{DoxyCompactList}\small\item\em Reset color of output text. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,11 +39,21 @@ A function that checks whether the roots obtained as a result of calculations ma
 \begin{DoxyReturn}{Returns}
 Match/\+Don\textquotesingle{}t match 
 \end{DoxyReturn}
-\mbox{\Hypertarget{test_8h_aea3bf12997841563be1a303d4754db90}\label{test_8h_aea3bf12997841563be1a303d4754db90}} 
-\index{test.h@{test.h}!rootsCount@{rootsCount}}
-\index{rootsCount@{rootsCount}!test.h@{test.h}}
-\doxysubsubsection{\texorpdfstring{rootsCount()}{rootsCount()}}
-{\footnotesize\ttfamily void roots\+Count (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{test_8h_a2142775936948fd1a7d81ba0975a562d}\label{test_8h_a2142775936948fd1a7d81ba0975a562d}} 
+\index{test.h@{test.h}!colorReset@{colorReset}}
+\index{colorReset@{colorReset}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{colorReset()}{colorReset()}}
+{\footnotesize\ttfamily void color\+Reset (\begin{DoxyParamCaption}\item[{HANDLE}]{h\+Console }\end{DoxyParamCaption})}
+
+
+
+Reset color of output text. 
+
+\mbox{\Hypertarget{test_8h_a7c6f41596e70c32e4d85dd165072ebbb}\label{test_8h_a7c6f41596e70c32e4d85dd165072ebbb}} 
+\index{test.h@{test.h}!printRootsCount@{printRootsCount}}
+\index{printRootsCount@{printRootsCount}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{printRootsCount()}{printRootsCount()}}
+{\footnotesize\ttfamily void print\+Roots\+Count (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
 
 A function that outputs the number of roots of the equation 
 \begin{DoxyParams}[1]{Parameters}
@@ -46,6 +63,26 @@ A function that outputs the number of roots of the equation
 \begin{DoxyReturn}{Returns}
 Returns nothing 
 \end{DoxyReturn}
+\mbox{\Hypertarget{test_8h_a23fef7dde8710353ba3c10dab8efec6f}\label{test_8h_a23fef7dde8710353ba3c10dab8efec6f}} 
+\index{test.h@{test.h}!setGreen@{setGreen}}
+\index{setGreen@{setGreen}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{setGreen()}{setGreen()}}
+{\footnotesize\ttfamily void set\+Green (\begin{DoxyParamCaption}\item[{HANDLE}]{h\+Console }\end{DoxyParamCaption})}
+
+
+
+Make green output text. 
+
+\mbox{\Hypertarget{test_8h_a54c418dabba7b5eb1781a27646d6a8eb}\label{test_8h_a54c418dabba7b5eb1781a27646d6a8eb}} 
+\index{test.h@{test.h}!setRed@{setRed}}
+\index{setRed@{setRed}!test.h@{test.h}}
+\doxysubsubsection{\texorpdfstring{setRed()}{setRed()}}
+{\footnotesize\ttfamily void set\+Red (\begin{DoxyParamCaption}\item[{HANDLE}]{h\+Console }\end{DoxyParamCaption})}
+
+
+
+Make red output text. 
+
 \mbox{\Hypertarget{test_8h_ac2d764ea9a71d7a91a86bb76b869d7a0}\label{test_8h_ac2d764ea9a71d7a91a86bb76b869d7a0}} 
 \index{test.h@{test.h}!testSolveTheSquare@{testSolveTheSquare}}
 \index{testSolveTheSquare@{testSolveTheSquare}!test.h@{test.h}}

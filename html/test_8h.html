@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: test.h File Reference</title>
+<title>SquareSolver: test.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">SquareSolver
    </div>
   </td>
  </tr>
@@ -70,6 +70,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="square_8h_source.html">square.h</a>&quot;</code><br />
+<code>#include &lt;windows.h&gt;</code><br />
 </div>
 <p><a href="test_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -81,8 +82,17 @@ Functions</h2></td></tr>
 <tr class="memitem:ac2d764ea9a71d7a91a86bb76b869d7a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#ac2d764ea9a71d7a91a86bb76b869d7a0">testSolveTheSquare</a> (FILE *in)</td></tr>
 <tr class="memdesc:ac2d764ea9a71d7a91a86bb76b869d7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that tests data received from a file.  <a href="test_8h.html#ac2d764ea9a71d7a91a86bb76b869d7a0">More...</a><br /></td></tr>
 <tr class="separator:ac2d764ea9a71d7a91a86bb76b869d7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea3bf12997841563be1a303d4754db90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#aea3bf12997841563be1a303d4754db90">rootsCount</a> (struct <a class="el" href="struct_equation.html">Equation</a> *eqt)</td></tr>
-<tr class="separator:aea3bf12997841563be1a303d4754db90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6f41596e70c32e4d85dd165072ebbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a7c6f41596e70c32e4d85dd165072ebbb">printRootsCount</a> (const struct <a class="el" href="struct_equation.html">Equation</a> *eqt)</td></tr>
+<tr class="separator:a7c6f41596e70c32e4d85dd165072ebbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54c418dabba7b5eb1781a27646d6a8eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a54c418dabba7b5eb1781a27646d6a8eb">setRed</a> (HANDLE hConsole)</td></tr>
+<tr class="memdesc:a54c418dabba7b5eb1781a27646d6a8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make red output text.  <a href="test_8h.html#a54c418dabba7b5eb1781a27646d6a8eb">More...</a><br /></td></tr>
+<tr class="separator:a54c418dabba7b5eb1781a27646d6a8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23fef7dde8710353ba3c10dab8efec6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a23fef7dde8710353ba3c10dab8efec6f">setGreen</a> (HANDLE hConsole)</td></tr>
+<tr class="memdesc:a23fef7dde8710353ba3c10dab8efec6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make green output text.  <a href="test_8h.html#a23fef7dde8710353ba3c10dab8efec6f">More...</a><br /></td></tr>
+<tr class="separator:a23fef7dde8710353ba3c10dab8efec6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2142775936948fd1a7d81ba0975a562d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8h.html#a2142775936948fd1a7d81ba0975a562d">colorReset</a> (HANDLE hConsole)</td></tr>
+<tr class="memdesc:a2142775936948fd1a7d81ba0975a562d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset color of output text.  <a href="test_8h.html#a2142775936948fd1a7d81ba0975a562d">More...</a><br /></td></tr>
+<tr class="separator:a2142775936948fd1a7d81ba0975a562d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -122,16 +132,36 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aea3bf12997841563be1a303d4754db90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea3bf12997841563be1a303d4754db90">&#9670;&nbsp;</a></span>rootsCount()</h2>
+<a id="a2142775936948fd1a7d81ba0975a562d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2142775936948fd1a7d81ba0975a562d">&#9670;&nbsp;</a></span>colorReset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void rootsCount </td>
+          <td class="memname">void colorReset </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="struct_equation.html">Equation</a> *&#160;</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hConsole</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset color of output text. </p>
+
+</div>
+</div>
+<a id="a7c6f41596e70c32e4d85dd165072ebbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6f41596e70c32e4d85dd165072ebbb">&#9670;&nbsp;</a></span>printRootsCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printRootsCount </td>
+          <td>(</td>
+          <td class="paramtype">const struct <a class="el" href="struct_equation.html">Equation</a> *&#160;</td>
           <td class="paramname"><em>eqt</em></td><td>)</td>
           <td></td>
         </tr>
@@ -144,6 +174,46 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns nothing </dd></dl>
+
+</div>
+</div>
+<a id="a23fef7dde8710353ba3c10dab8efec6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23fef7dde8710353ba3c10dab8efec6f">&#9670;&nbsp;</a></span>setGreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setGreen </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hConsole</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make green output text. </p>
+
+</div>
+</div>
+<a id="a54c418dabba7b5eb1781a27646d6a8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54c418dabba7b5eb1781a27646d6a8eb">&#9670;&nbsp;</a></span>setRed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setRed </td>
+          <td>(</td>
+          <td class="paramtype">HANDLE&#160;</td>
+          <td class="paramname"><em>hConsole</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make red output text. </p>
 
 </div>
 </div>

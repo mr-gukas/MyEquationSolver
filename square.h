@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-const double CLOSE_TO_ZERO = 0.00001; ///<The value below which we use for zero
+const double CLOSE_TO_ZERO = 1e-5; ///<The value below which we use as zero
+
 ///@brief A class that determines the number of roots of the equation
 enum Roots
 {
@@ -32,7 +33,7 @@ void solveTheSquare(struct Equation* eqt);
  * @param [in] eqt Pointer to a structure containing the necessary roots and their number
  * @return Returns nothing
  */
-void showSolution(struct Equation* eqt);
+void showSolution(const struct Equation* eqt);
 
 /**
  * @brief Displays a menu in which the user determines further actions
@@ -62,4 +63,4 @@ struct Equation
  * @param [in] TWo floating point numbers
  * @return Returns nothing
  */
-void swapBig(double* x1, double* x2);
+void swapDescending(double* x1, double* x2);

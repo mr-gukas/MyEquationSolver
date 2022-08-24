@@ -42,7 +42,7 @@ void solveTheSquare(struct Equation* eqt)
             }
             else
             {
-                swapBig(&(eqt->x1), &(eqt->x2));
+                swapDescending(&(eqt->x1), &(eqt->x2));
                 eqt->count = TWO_ROOTS;
             }
         }
@@ -51,7 +51,7 @@ void solveTheSquare(struct Equation* eqt)
 
 bool nearZero(double x)
 {
-    return (fabs(x) < CLOSE_TO_ZERO) ? true : false;
+    return fabs(x) < CLOSE_TO_ZERO;
 }
 
 void eatLine(FILE* file)
@@ -62,12 +62,15 @@ void eatLine(FILE* file)
         continue;
 }
 
-void swapBig(double* x1, double* x2)
+void swapDescending(double* x1, double* x2)
 {
+    assert (x1 != NULL);
+    assert (x2 != NULL);
+    assert (x1 != x2);
+
     if (*x1 < *x2)
     {
-        double temp = NAN;
-        temp = *x2;
+        double temp = *x2;
         *x2 = *x1;
         *x1 = temp;
     }
