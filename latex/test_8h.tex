@@ -6,9 +6,9 @@
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{test_8h_ab716c2bce0ef3b4f6499f662fc15d440}{cmp\+Roots}} (double a, double b)
-\item 
+\begin{DoxyCompactList}\small\item\em A function that checks whether the roots obtained as a result of calculations match the real roots. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{test_8h_ac2d764ea9a71d7a91a86bb76b869d7a0}{test\+Solve\+The\+Square}} (FILE $\ast$in)
-\item 
+\begin{DoxyCompactList}\small\item\em A function that tests data received from a file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{test_8h_aea3bf12997841563be1a303d4754db90}{roots\+Count}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -25,7 +25,11 @@ const char \mbox{\hyperlink{test_8h_acbe3904c3bbaff935a9ca3536cd9a986}{TESTFILE}
 \doxysubsubsection{\texorpdfstring{cmpRoots()}{cmpRoots()}}
 {\footnotesize\ttfamily bool cmp\+Roots (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
 
-A function that checks whether the roots obtained as a result of calculations match the real roots \begin{DoxyReturn}{Returns}
+
+
+A function that checks whether the roots obtained as a result of calculations match the real roots. 
+
+\begin{DoxyReturn}{Returns}
 Match/\+Don\textquotesingle{}t match 
 \end{DoxyReturn}
 \mbox{\Hypertarget{test_8h_aea3bf12997841563be1a303d4754db90}\label{test_8h_aea3bf12997841563be1a303d4754db90}} 
@@ -39,17 +43,27 @@ A function that outputs the number of roots of the equation
 \mbox{\texttt{ in}}  & {\em A} & pointer to the structure, the number of roots of which you want to output \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}
 \mbox{\Hypertarget{test_8h_ac2d764ea9a71d7a91a86bb76b869d7a0}\label{test_8h_ac2d764ea9a71d7a91a86bb76b869d7a0}} 
 \index{test.h@{test.h}!testSolveTheSquare@{testSolveTheSquare}}
 \index{testSolveTheSquare@{testSolveTheSquare}!test.h@{test.h}}
 \doxysubsubsection{\texorpdfstring{testSolveTheSquare()}{testSolveTheSquare()}}
 {\footnotesize\ttfamily void test\+Solve\+The\+Square (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{in }\end{DoxyParamCaption})}
 
-A function that tests data received from a file 
+
+
+A function that tests data received from a file. 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em A} & pointer to a file containing tests \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}
 
 
 \doxysubsection{Variable Documentation}

@@ -8,9 +8,9 @@
 int \mbox{\hyperlink{square_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \item 
 void \mbox{\hyperlink{square_8cpp_a94a5369ea8bbbcf1eb3134a98ebe69a3}{show\+Solution}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
-\item 
+\begin{DoxyCompactList}\small\item\em Outputs the roots of the quadratic equation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{square_8cpp_ae30aafc92b6e0228e046d10fbcd0b7b1}{get\+Choice}} (void)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Displays a menu in which the user determines further actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -20,7 +20,11 @@ int \mbox{\hyperlink{square_8cpp_ae30aafc92b6e0228e046d10fbcd0b7b1}{get\+Choice}
 \doxysubsubsection{\texorpdfstring{getChoice()}{getChoice()}}
 {\footnotesize\ttfamily int get\+Choice (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-Displays a menu in which the user determines further actions \begin{DoxyReturn}{Returns}
+
+
+Displays a menu in which the user determines further actions. 
+
+\begin{DoxyReturn}{Returns}
 The choice made by the user 
 \end{DoxyReturn}
 \mbox{\Hypertarget{square_8cpp_a840291bc02cba5474a4cb46a9b9566fe}\label{square_8cpp_a840291bc02cba5474a4cb46a9b9566fe}} 
@@ -35,8 +39,15 @@ The choice made by the user
 \doxysubsubsection{\texorpdfstring{showSolution()}{showSolution()}}
 {\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
 
-Outputs the roots of the quadratic equation 
+
+
+Outputs the roots of the quadratic equation. 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em eqt} & Pointer to a structure containing the necessary roots and their number \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}

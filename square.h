@@ -13,30 +13,38 @@ enum Roots
     INFIN = -1///<There are infinite number of roots
 };
 
-///Determines whether a floating-point number can be considered zero
-///@return Close to zero or not
+/**
+ * @brief Determines whether a floating-point number can be considered zero
+ * @param [in] Floating point number
+ * @return Close to zero or not
+ */
 bool nearZero(double x);
 
 /**
-Solves a quadratic equation based on the coefficients entered by the user
-@param [in] eqt Pointer to the structure containing the necessary coefficients
-*/
+ * @brief Solves a quadratic equation based on the coefficients entered by the user
+ * @param [in] eqt Pointer to the structure containing the necessary coefficients
+ * @return Returns nothing
+ */
 void solveTheSquare(struct Equation* eqt);
 
 /**
-Outputs the roots of the quadratic equation
-@param [in] eqt Pointer to a structure containing the necessary roots and their number
-*/
+ * @brief Outputs the roots of the quadratic equation
+ * @param [in] eqt Pointer to a structure containing the necessary roots and their number
+ * @return Returns nothing
+ */
 void showSolution(struct Equation* eqt);
 
 /**
-Displays a menu in which the user determines further actions
-@return The choice made by the user
-*/
+ * @brief Displays a menu in which the user determines further actions
+ * @return The choice made by the user
+ */
 int getChoice(void);
 
-///To switch to a new line
-///@param [in] Where to eat the line
+/**
+ * @brief To switch to a new line
+ * @param [in] file From where "eat" the line
+ * @return Returns nothing
+ */
 void eatLine(FILE* file);
 
 ///@brief A data structure that includes equation coefficients, roots, and number of roots
@@ -49,5 +57,9 @@ struct Equation
     double x1 = NAN;///<The first root
     double x2 = NAN;///<The second root
 };
-///A function that swaps two real numbers, if the second is greater than the first
+/**
+ * @brief A function that swaps two real numbers, if the second is greater than the first
+ * @param [in] TWo floating point numbers
+ * @return Returns nothing
+ */
 void swapBig(double* x1, double* x2);

@@ -5,11 +5,11 @@
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{func_8cpp_aab36383b91283d94f28f5487f7ac7e65}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
-\item 
+\begin{DoxyCompactList}\small\item\em Solves a quadratic equation based on the coefficients entered by the user. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{func_8cpp_a133ed687f8460c7757b3b2bec3521a10}{near\+Zero}} (double x)
-\item 
+\begin{DoxyCompactList}\small\item\em Determines whether a floating-\/point number can be considered zero. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{func_8cpp_a9969f44ecbced579e3b3b0acc78073df}{eat\+Line}} (FILE $\ast$file)
-\item 
+\begin{DoxyCompactList}\small\item\em To switch to a new line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{func_8cpp_a11c41bf886ae9da12c23cc7299c98648}{swap\+Big}} (double $\ast$x1, double $\ast$x2)
 \begin{DoxyCompactList}\small\item\em A function that swaps two real numbers, if the second is greater than the first. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -21,18 +21,34 @@ void \mbox{\hyperlink{func_8cpp_a11c41bf886ae9da12c23cc7299c98648}{swap\+Big}} (
 \doxysubsubsection{\texorpdfstring{eatLine()}{eatLine()}}
 {\footnotesize\ttfamily void eat\+Line (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
 
-To switch to a new line 
+
+
+To switch to a new line. 
+
+
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em Where} & to eat the line \\
+\mbox{\texttt{ in}}  & {\em file} & From where \char`\"{}eat\char`\"{} the line \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}
 \mbox{\Hypertarget{func_8cpp_a133ed687f8460c7757b3b2bec3521a10}\label{func_8cpp_a133ed687f8460c7757b3b2bec3521a10}} 
 \index{func.cpp@{func.cpp}!nearZero@{nearZero}}
 \index{nearZero@{nearZero}!func.cpp@{func.cpp}}
 \doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
 {\footnotesize\ttfamily bool near\+Zero (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
 
-Determines whether a floating-\/point number can be considered zero \begin{DoxyReturn}{Returns}
+
+
+Determines whether a floating-\/point number can be considered zero. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Floating} & point number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
 Close to zero or not 
 \end{DoxyReturn}
 \mbox{\Hypertarget{func_8cpp_aab36383b91283d94f28f5487f7ac7e65}\label{func_8cpp_aab36383b91283d94f28f5487f7ac7e65}} 
@@ -41,11 +57,18 @@ Close to zero or not
 \doxysubsubsection{\texorpdfstring{solveTheSquare()}{solveTheSquare()}}
 {\footnotesize\ttfamily void solve\+The\+Square (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
 
-Solves a quadratic equation based on the coefficients entered by the user 
+
+
+Solves a quadratic equation based on the coefficients entered by the user. 
+
+
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em eqt} & Pointer to the structure containing the necessary coefficients \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}
 \mbox{\Hypertarget{func_8cpp_a11c41bf886ae9da12c23cc7299c98648}\label{func_8cpp_a11c41bf886ae9da12c23cc7299c98648}} 
 \index{func.cpp@{func.cpp}!swapBig@{swapBig}}
 \index{swapBig@{swapBig}!func.cpp@{func.cpp}}
@@ -56,3 +79,11 @@ Solves a quadratic equation based on the coefficients entered by the user
 
 A function that swaps two real numbers, if the second is greater than the first. 
 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em TWo} & floating point numbers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}

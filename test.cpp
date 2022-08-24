@@ -26,6 +26,7 @@ void testSolveTheSquare(FILE* in)
     rewind(in);
 
     size_t tcount = 0;
+    size_t passed = 0;
     struct Equation truly, current;
 
     fscanf(in, "%u", &tcount);
@@ -68,14 +69,22 @@ void testSolveTheSquare(FILE* in)
             cmpRoots(current.x1, truly.x1) &&
             cmpRoots(current.x2, truly.x2))
         {
+            printf("Test num.%u was successfully ", i + 1);
+
             SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
-            printf("Test num.%u was successfully passed\n", i + 1);
+
+            printf("passed\n");
+            passed++;
+
             SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
         }
         else
         {
+            printf("Test num.%u was", i + 1);
+
             SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-            printf("%sTest num.%u was failed\n", RED, i + 1);
+
+            printf("failed\n");
             printf("EXPECTED: Count of the roots: ");
             rootsCount(&truly);
             printf("RECEIVED: Count of the roots: ");
@@ -83,11 +92,27 @@ void testSolveTheSquare(FILE* in)
             SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
         }
     }
+    if (passed == tcount)
+    {
+        SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
+
+        printf("Passed all tests! (%u/%u)\n", tcount, tcount);
+
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    }
+    else
+    {
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
+
+        printf("Not all tests passed! (%u/%u)\n", passed, tcount);
+
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED   | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+    }
 }
 
 bool cmpRoots(double a, double b)
 {
-    return (nearZero(a - b) || (isnan(a) && isnan(b))) ? true : false;
+    return (nearZero(a - b) || (isnan(a) && isnan(b)));
 }
 
 void rootsCount(struct Equation* eqt)
