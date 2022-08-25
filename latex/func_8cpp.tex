@@ -4,40 +4,40 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{func_8cpp_aab36383b91283d94f28f5487f7ac7e65}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+void \mbox{\hyperlink{func_8cpp_a7686b5a6a0ffc0c08ff51d5ab9776fe3}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const eqt)
 \begin{DoxyCompactList}\small\item\em Solves a quadratic equation based on the coefficients entered by the user. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{func_8cpp_a133ed687f8460c7757b3b2bec3521a10}{near\+Zero}} (double x)
+bool \mbox{\hyperlink{func_8cpp_aa8b4e1dddc92eff081468c07e54cd104}{near\+Zero}} (const double x)
 \begin{DoxyCompactList}\small\item\em Determines whether a floating-\/point number can be considered zero. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{func_8cpp_a9969f44ecbced579e3b3b0acc78073df}{eat\+Line}} (FILE $\ast$file)
-\begin{DoxyCompactList}\small\item\em To switch to a new line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{func_8cpp_a9988ffaddd0bf3f63afe89f89d9943eb}{eat\+Line}} (FILE $\ast$const file)
+\begin{DoxyCompactList}\small\item\em To appear to a new line in the stream. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{func_8cpp_a7b270b4d27e59d0d7d8838a4d821a970}{swap\+Descending}} (double $\ast$x1, double $\ast$x2)
 \begin{DoxyCompactList}\small\item\em A function that swaps two real numbers, if the second is greater than the first. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{func_8cpp_a9969f44ecbced579e3b3b0acc78073df}\label{func_8cpp_a9969f44ecbced579e3b3b0acc78073df}} 
+\mbox{\Hypertarget{func_8cpp_a9988ffaddd0bf3f63afe89f89d9943eb}\label{func_8cpp_a9988ffaddd0bf3f63afe89f89d9943eb}} 
 \index{func.cpp@{func.cpp}!eatLine@{eatLine}}
 \index{eatLine@{eatLine}!func.cpp@{func.cpp}}
 \doxysubsubsection{\texorpdfstring{eatLine()}{eatLine()}}
-{\footnotesize\ttfamily void eat\+Line (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool eat\+Line (\begin{DoxyParamCaption}\item[{FILE $\ast$const}]{file }\end{DoxyParamCaption})}
 
 
 
-To switch to a new line. 
+To appear to a new line in the stream. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & From where \char`\"{}eat\char`\"{} the line \\
+\mbox{\texttt{ in}}  & {\em file} & from where \char`\"{}eat\char`\"{} the line \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Returns nothing 
+Return true if remains of the line contains only space symbols 
 \end{DoxyReturn}
-\mbox{\Hypertarget{func_8cpp_a133ed687f8460c7757b3b2bec3521a10}\label{func_8cpp_a133ed687f8460c7757b3b2bec3521a10}} 
+\mbox{\Hypertarget{func_8cpp_aa8b4e1dddc92eff081468c07e54cd104}\label{func_8cpp_aa8b4e1dddc92eff081468c07e54cd104}} 
 \index{func.cpp@{func.cpp}!nearZero@{nearZero}}
 \index{nearZero@{nearZero}!func.cpp@{func.cpp}}
 \doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
-{\footnotesize\ttfamily bool near\+Zero (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool near\+Zero (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption})}
 
 
 
@@ -51,11 +51,11 @@ Determines whether a floating-\/point number can be considered zero.
 \begin{DoxyReturn}{Returns}
 Close to zero or not 
 \end{DoxyReturn}
-\mbox{\Hypertarget{func_8cpp_aab36383b91283d94f28f5487f7ac7e65}\label{func_8cpp_aab36383b91283d94f28f5487f7ac7e65}} 
+\mbox{\Hypertarget{func_8cpp_a7686b5a6a0ffc0c08ff51d5ab9776fe3}\label{func_8cpp_a7686b5a6a0ffc0c08ff51d5ab9776fe3}} 
 \index{func.cpp@{func.cpp}!solveTheSquare@{solveTheSquare}}
 \index{solveTheSquare@{solveTheSquare}!func.cpp@{func.cpp}}
 \doxysubsubsection{\texorpdfstring{solveTheSquare()}{solveTheSquare()}}
-{\footnotesize\ttfamily void solve\+The\+Square (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void solve\+The\+Square (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const}]{eqt }\end{DoxyParamCaption})}
 
 
 
@@ -63,7 +63,7 @@ Solves a quadratic equation based on the coefficients entered by the user.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em eqt} & Pointer to the structure containing the necessary coefficients \\
+\mbox{\texttt{ out}}  & {\em eqt} & Pointer to the structure containing the necessary data \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -81,7 +81,7 @@ A function that swaps two real numbers, if the second is greater than the first.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em TWo} & floating point numbers \\
+\mbox{\texttt{ out}}  & {\em Two} & floating point numbers \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

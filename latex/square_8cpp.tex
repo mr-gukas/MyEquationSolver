@@ -7,7 +7,7 @@
 \item 
 int \mbox{\hyperlink{square_8cpp_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \item 
-void \mbox{\hyperlink{square_8cpp_a02f10265d0e3d4e9d1b9b509c5af61f6}{show\+Solution}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+void \mbox{\hyperlink{square_8cpp_a7c8dec41518833012a5a269a43036f89}{show\+Solution}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const eqt)
 \begin{DoxyCompactList}\small\item\em Outputs the roots of the quadratic equation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{square_8cpp_ae30aafc92b6e0228e046d10fbcd0b7b1}{get\+Choice}} (void)
 \begin{DoxyCompactList}\small\item\em Displays a menu in which the user determines further actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -33,11 +33,11 @@ The choice made by the user
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{square_8cpp_a02f10265d0e3d4e9d1b9b509c5af61f6}\label{square_8cpp_a02f10265d0e3d4e9d1b9b509c5af61f6}} 
+\mbox{\Hypertarget{square_8cpp_a7c8dec41518833012a5a269a43036f89}\label{square_8cpp_a7c8dec41518833012a5a269a43036f89}} 
 \index{square.cpp@{square.cpp}!showSolution@{showSolution}}
 \index{showSolution@{showSolution}!square.cpp@{square.cpp}}
 \doxysubsubsection{\texorpdfstring{showSolution()}{showSolution()}}
-{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const}]{eqt }\end{DoxyParamCaption})}
 
 
 
@@ -45,7 +45,7 @@ Outputs the roots of the quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em eqt} & Pointer to a structure containing the necessary roots and their number \\
+\mbox{\texttt{ out}}  & {\em eqt} & Pointer to a structure containing the necessary data \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printrootscount_16',['printRootsCount',['../test_8cpp.html#a7c6f41596e70c32e4d85dd165072ebbb',1,'printRootsCount(const struct Equation *eqt):&#160;test.cpp'],['../test_8h.html#a7c6f41596e70c32e4d85dd165072ebbb',1,'printRootsCount(const struct Equation *eqt):&#160;test.cpp']]]
+  ['printrootscount_16',['printRootsCount',['../test_8cpp.html#a872f60501305f9833fdedef9c0da762e',1,'printRootsCount(const struct Equation *const eqt):&#160;test.cpp'],['../test_8h.html#a872f60501305f9833fdedef9c0da762e',1,'printRootsCount(const struct Equation *const eqt):&#160;test.cpp']]]
 ];

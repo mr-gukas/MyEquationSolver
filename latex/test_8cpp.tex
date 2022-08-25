@@ -6,26 +6,28 @@
 \item 
 int \mbox{\hyperlink{test_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \item 
-void \mbox{\hyperlink{test_8cpp_ac2d764ea9a71d7a91a86bb76b869d7a0}{test\+Solve\+The\+Square}} (FILE $\ast$in)
+void \mbox{\hyperlink{test_8cpp_ac4c91892baddbbbc33b86ade05170679}{test\+Solve\+The\+Square}} (FILE $\ast$const in)
 \begin{DoxyCompactList}\small\item\em A function that tests data received from a file. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{test_8cpp_ab716c2bce0ef3b4f6499f662fc15d440}{cmp\+Roots}} (double a, double b)
+bool \mbox{\hyperlink{test_8cpp_aa2037ae5b60dbf4c41f8c0d4d0f4e5b5}{cmp\+Roots}} (const double a, const double b)
 \begin{DoxyCompactList}\small\item\em A function that checks whether the roots obtained as a result of calculations match the real roots. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{test_8cpp_a7c6f41596e70c32e4d85dd165072ebbb}{print\+Roots\+Count}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+void \mbox{\hyperlink{test_8cpp_a872f60501305f9833fdedef9c0da762e}{print\+Roots\+Count}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const eqt)
 \item 
-void \mbox{\hyperlink{test_8cpp_a54c418dabba7b5eb1781a27646d6a8eb}{set\+Red}} (HANDLE h\+Console)
+void \mbox{\hyperlink{test_8cpp_a06408eb49393f14b808fdb131303c762}{set\+Red}} (HANDLE const h\+Console)
 \begin{DoxyCompactList}\small\item\em Make red output text. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{test_8cpp_a23fef7dde8710353ba3c10dab8efec6f}{set\+Green}} (HANDLE h\+Console)
+void \mbox{\hyperlink{test_8cpp_a26eca28b6a5a437a394eb86ab69b2012}{set\+Green}} (HANDLE const h\+Console)
 \begin{DoxyCompactList}\small\item\em Make green output text. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{test_8cpp_a2142775936948fd1a7d81ba0975a562d}{color\+Reset}} (HANDLE h\+Console)
-\begin{DoxyCompactList}\small\item\em Reset color of output text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{test_8cpp_a755323e893e645a9178f003d4b419849}{color\+Reset}} (HANDLE const h\+Console)
+\begin{DoxyCompactList}\small\item\em Reset color of output text. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{test_8cpp_af5a630cc2a8ae1bdf6d68b220e36ffc5}{test\+Data\+Error}} (const size\+\_\+t test\+Num)
+\begin{DoxyCompactList}\small\item\em A function that collapses testing in case of erroneous data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{test_8cpp_ab716c2bce0ef3b4f6499f662fc15d440}\label{test_8cpp_ab716c2bce0ef3b4f6499f662fc15d440}} 
+\mbox{\Hypertarget{test_8cpp_aa2037ae5b60dbf4c41f8c0d4d0f4e5b5}\label{test_8cpp_aa2037ae5b60dbf4c41f8c0d4d0f4e5b5}} 
 \index{test.cpp@{test.cpp}!cmpRoots@{cmpRoots}}
 \index{cmpRoots@{cmpRoots}!test.cpp@{test.cpp}}
 \doxysubsubsection{\texorpdfstring{cmpRoots()}{cmpRoots()}}
-{\footnotesize\ttfamily bool cmp\+Roots (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool cmp\+Roots (\begin{DoxyParamCaption}\item[{const double}]{a,  }\item[{const double}]{b }\end{DoxyParamCaption})}
 
 
 
@@ -34,11 +36,11 @@ A function that checks whether the roots obtained as a result of calculations ma
 \begin{DoxyReturn}{Returns}
 Match/\+Don\textquotesingle{}t match 
 \end{DoxyReturn}
-\mbox{\Hypertarget{test_8cpp_a2142775936948fd1a7d81ba0975a562d}\label{test_8cpp_a2142775936948fd1a7d81ba0975a562d}} 
+\mbox{\Hypertarget{test_8cpp_a755323e893e645a9178f003d4b419849}\label{test_8cpp_a755323e893e645a9178f003d4b419849}} 
 \index{test.cpp@{test.cpp}!colorReset@{colorReset}}
 \index{colorReset@{colorReset}!test.cpp@{test.cpp}}
 \doxysubsubsection{\texorpdfstring{colorReset()}{colorReset()}}
-{\footnotesize\ttfamily void color\+Reset (\begin{DoxyParamCaption}\item[{HANDLE}]{h\+Console }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void color\+Reset (\begin{DoxyParamCaption}\item[{HANDLE const}]{h\+Console }\end{DoxyParamCaption})}
 
 
 
@@ -50,11 +52,11 @@ Reset color of output text.
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{test_8cpp_a7c6f41596e70c32e4d85dd165072ebbb}\label{test_8cpp_a7c6f41596e70c32e4d85dd165072ebbb}} 
+\mbox{\Hypertarget{test_8cpp_a872f60501305f9833fdedef9c0da762e}\label{test_8cpp_a872f60501305f9833fdedef9c0da762e}} 
 \index{test.cpp@{test.cpp}!printRootsCount@{printRootsCount}}
 \index{printRootsCount@{printRootsCount}!test.cpp@{test.cpp}}
 \doxysubsubsection{\texorpdfstring{printRootsCount()}{printRootsCount()}}
-{\footnotesize\ttfamily void print\+Roots\+Count (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void print\+Roots\+Count (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const}]{eqt }\end{DoxyParamCaption})}
 
 A function that outputs the number of roots of the equation 
 \begin{DoxyParams}[1]{Parameters}
@@ -64,31 +66,49 @@ A function that outputs the number of roots of the equation
 \begin{DoxyReturn}{Returns}
 Returns nothing 
 \end{DoxyReturn}
-\mbox{\Hypertarget{test_8cpp_a23fef7dde8710353ba3c10dab8efec6f}\label{test_8cpp_a23fef7dde8710353ba3c10dab8efec6f}} 
+\mbox{\Hypertarget{test_8cpp_a26eca28b6a5a437a394eb86ab69b2012}\label{test_8cpp_a26eca28b6a5a437a394eb86ab69b2012}} 
 \index{test.cpp@{test.cpp}!setGreen@{setGreen}}
 \index{setGreen@{setGreen}!test.cpp@{test.cpp}}
 \doxysubsubsection{\texorpdfstring{setGreen()}{setGreen()}}
-{\footnotesize\ttfamily void set\+Green (\begin{DoxyParamCaption}\item[{HANDLE}]{h\+Console }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void set\+Green (\begin{DoxyParamCaption}\item[{HANDLE const}]{h\+Console }\end{DoxyParamCaption})}
 
 
 
 Make green output text. 
 
-\mbox{\Hypertarget{test_8cpp_a54c418dabba7b5eb1781a27646d6a8eb}\label{test_8cpp_a54c418dabba7b5eb1781a27646d6a8eb}} 
+\mbox{\Hypertarget{test_8cpp_a06408eb49393f14b808fdb131303c762}\label{test_8cpp_a06408eb49393f14b808fdb131303c762}} 
 \index{test.cpp@{test.cpp}!setRed@{setRed}}
 \index{setRed@{setRed}!test.cpp@{test.cpp}}
 \doxysubsubsection{\texorpdfstring{setRed()}{setRed()}}
-{\footnotesize\ttfamily void set\+Red (\begin{DoxyParamCaption}\item[{HANDLE}]{h\+Console }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void set\+Red (\begin{DoxyParamCaption}\item[{HANDLE const}]{h\+Console }\end{DoxyParamCaption})}
 
 
 
 Make red output text. 
 
-\mbox{\Hypertarget{test_8cpp_ac2d764ea9a71d7a91a86bb76b869d7a0}\label{test_8cpp_ac2d764ea9a71d7a91a86bb76b869d7a0}} 
+\mbox{\Hypertarget{test_8cpp_af5a630cc2a8ae1bdf6d68b220e36ffc5}\label{test_8cpp_af5a630cc2a8ae1bdf6d68b220e36ffc5}} 
+\index{test.cpp@{test.cpp}!testDataError@{testDataError}}
+\index{testDataError@{testDataError}!test.cpp@{test.cpp}}
+\doxysubsubsection{\texorpdfstring{testDataError()}{testDataError()}}
+{\footnotesize\ttfamily void test\+Data\+Error (\begin{DoxyParamCaption}\item[{const size\+\_\+t}]{test\+Num }\end{DoxyParamCaption})}
+
+
+
+A function that collapses testing in case of erroneous data. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Number} & of the test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{test_8cpp_ac4c91892baddbbbc33b86ade05170679}\label{test_8cpp_ac4c91892baddbbbc33b86ade05170679}} 
 \index{test.cpp@{test.cpp}!testSolveTheSquare@{testSolveTheSquare}}
 \index{testSolveTheSquare@{testSolveTheSquare}!test.cpp@{test.cpp}}
 \doxysubsubsection{\texorpdfstring{testSolveTheSquare()}{testSolveTheSquare()}}
-{\footnotesize\ttfamily void test\+Solve\+The\+Square (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{in }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void test\+Solve\+The\+Square (\begin{DoxyParamCaption}\item[{FILE $\ast$const}]{in }\end{DoxyParamCaption})}
 
 
 

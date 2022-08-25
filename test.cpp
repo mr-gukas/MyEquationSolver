@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-void testSolveTheSquare(FILE* in)
+void testSolveTheSquare(FILE* const in)
 {
     assert (in != NULL);
 
@@ -44,26 +44,42 @@ void testSolveTheSquare(FILE* in)
             assert (0 && "An error in the test data. Curtailing testing");
         }
 
+        assert (nRoots >= -1 && nRoots <= 2);
+
         truly.count = (Roots) nRoots;
 
-        if (truly.count == NO_ROOTS || truly.count == INFIN)
+        switch (truly.count)
         {
-            eatLine(in);
-        }
-        else if (truly.count == ONE_ROOT)
-        {
-            if (fscanf(in, "%lf", &truly.x1) != 1)
-            {
-                assert(0 && "An error in the test data. Curtailing testing");
-            }
-        }
-        else
-        {
-            if (fscanf(in, "%lf %lf", &truly.x1, &truly.x2) != 2)
-            {
-                assert (0 && "An error in the test data. Curtailing testing");
-            }
-            swapDescending(&truly.x1, &truly.x2);
+            case  NO_ROOTS:
+            case     INFIN:
+                if (!eatLine(in))
+                {
+                    testDataError(i);
+                }
+                break;
+
+            case  ONE_ROOT:
+                char oneRootLine[80];
+                fgets(oneRootLine, 80, in);
+
+                if (sscanf(oneRootLine, "%lf", &truly.x1) != 1)
+                {
+                    testDataError(i);
+                }
+                break;
+
+            case TWO_ROOTS:
+                char twoRootline[80];
+                fgets(twoRootline, 80, in);
+
+                if (sscanf(twoRootline, "%lf %lf", &truly.x1, &truly.x2) != 2)
+                {
+                    testDataError(i);
+                }
+                swapDescending(&truly.x1, &truly.x2);
+                break;
+
+            default: assert(0 && "Unclear data. Curtailing testing");
         }
 
         current.a = truly.a;
@@ -116,12 +132,12 @@ void testSolveTheSquare(FILE* in)
     }
 }
 
-bool cmpRoots(double a, double b)
+bool cmpRoots(const double a, const double b)
 {
     return nearZero(a - b) || (isnan(a) && isnan(b));
 }
 
-void printRootsCount(const struct Equation* eqt)
+void printRootsCount(const struct Equation* const eqt)
 {
     switch (eqt->count)
     {
@@ -149,18 +165,25 @@ void printRootsCount(const struct Equation* eqt)
     }
 }
 
-void setRed(HANDLE hConsole)
+void setRed(HANDLE const  hConsole)
 {
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
 }
 
-void setGreen(HANDLE hConsole)
+void setGreen(HANDLE const hConsole)
 {
     SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN);
 }
 
-void colorReset(HANDLE hConsole)
+void colorReset(HANDLE const hConsole)
 {
     SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_INTENSITY);
+}
+
+void testDataError(const size_t testNum)
+{
+    fprintf(stderr, "Test number %u: Unclear data for roots's count condition.\n", testNum + 1);
+    fprintf(stderr,"Curtailing testing...\n");
+    abort();
 }
 

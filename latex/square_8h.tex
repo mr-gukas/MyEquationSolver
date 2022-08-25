@@ -4,6 +4,7 @@
 {\ttfamily \#include $<$math.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,16 +22,16 @@ enum \mbox{\hyperlink{square_8h_a34f6126547cfdaeca6fb82d45a97692a}{Roots}} \{ \m
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{square_8h_a133ed687f8460c7757b3b2bec3521a10}{near\+Zero}} (double x)
+bool \mbox{\hyperlink{square_8h_aa8b4e1dddc92eff081468c07e54cd104}{near\+Zero}} (const double x)
 \begin{DoxyCompactList}\small\item\em Determines whether a floating-\/point number can be considered zero. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{square_8h_aab36383b91283d94f28f5487f7ac7e65}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+void \mbox{\hyperlink{square_8h_a7686b5a6a0ffc0c08ff51d5ab9776fe3}{solve\+The\+Square}} (struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const eqt)
 \begin{DoxyCompactList}\small\item\em Solves a quadratic equation based on the coefficients entered by the user. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{square_8h_a02f10265d0e3d4e9d1b9b509c5af61f6}{show\+Solution}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$eqt)
+void \mbox{\hyperlink{square_8h_a7c8dec41518833012a5a269a43036f89}{show\+Solution}} (const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const eqt)
 \begin{DoxyCompactList}\small\item\em Outputs the roots of the quadratic equation. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}{get\+Choice}} (void)
 \begin{DoxyCompactList}\small\item\em Displays a menu in which the user determines further actions. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{square_8h_a9969f44ecbced579e3b3b0acc78073df}{eat\+Line}} (FILE $\ast$file)
-\begin{DoxyCompactList}\small\item\em To switch to a new line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{square_8h_a9988ffaddd0bf3f63afe89f89d9943eb}{eat\+Line}} (FILE $\ast$const file)
+\begin{DoxyCompactList}\small\item\em To appear to a new line in the stream. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{square_8h_a7b270b4d27e59d0d7d8838a4d821a970}{swap\+Descending}} (double $\ast$x1, double $\ast$x2)
 \begin{DoxyCompactList}\small\item\em A function that swaps two real numbers, if the second is greater than the first. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -72,23 +73,23 @@ INFIN&There are infinite number of roots. \\
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{square_8h_a9969f44ecbced579e3b3b0acc78073df}\label{square_8h_a9969f44ecbced579e3b3b0acc78073df}} 
+\mbox{\Hypertarget{square_8h_a9988ffaddd0bf3f63afe89f89d9943eb}\label{square_8h_a9988ffaddd0bf3f63afe89f89d9943eb}} 
 \index{square.h@{square.h}!eatLine@{eatLine}}
 \index{eatLine@{eatLine}!square.h@{square.h}}
 \doxysubsubsection{\texorpdfstring{eatLine()}{eatLine()}}
-{\footnotesize\ttfamily void eat\+Line (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{file }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool eat\+Line (\begin{DoxyParamCaption}\item[{FILE $\ast$const}]{file }\end{DoxyParamCaption})}
 
 
 
-To switch to a new line. 
+To appear to a new line in the stream. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em file} & From where \char`\"{}eat\char`\"{} the line \\
+\mbox{\texttt{ in}}  & {\em file} & from where \char`\"{}eat\char`\"{} the line \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Returns nothing 
+Return true if remains of the line contains only space symbols 
 \end{DoxyReturn}
 \mbox{\Hypertarget{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}\label{square_8h_ae30aafc92b6e0228e046d10fbcd0b7b1}} 
 \index{square.h@{square.h}!getChoice@{getChoice}}
@@ -103,11 +104,11 @@ Displays a menu in which the user determines further actions.
 \begin{DoxyReturn}{Returns}
 The choice made by the user 
 \end{DoxyReturn}
-\mbox{\Hypertarget{square_8h_a133ed687f8460c7757b3b2bec3521a10}\label{square_8h_a133ed687f8460c7757b3b2bec3521a10}} 
+\mbox{\Hypertarget{square_8h_aa8b4e1dddc92eff081468c07e54cd104}\label{square_8h_aa8b4e1dddc92eff081468c07e54cd104}} 
 \index{square.h@{square.h}!nearZero@{nearZero}}
 \index{nearZero@{nearZero}!square.h@{square.h}}
 \doxysubsubsection{\texorpdfstring{nearZero()}{nearZero()}}
-{\footnotesize\ttfamily bool near\+Zero (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool near\+Zero (\begin{DoxyParamCaption}\item[{const double}]{x }\end{DoxyParamCaption})}
 
 
 
@@ -121,11 +122,11 @@ Determines whether a floating-\/point number can be considered zero.
 \begin{DoxyReturn}{Returns}
 Close to zero or not 
 \end{DoxyReturn}
-\mbox{\Hypertarget{square_8h_a02f10265d0e3d4e9d1b9b509c5af61f6}\label{square_8h_a02f10265d0e3d4e9d1b9b509c5af61f6}} 
+\mbox{\Hypertarget{square_8h_a7c8dec41518833012a5a269a43036f89}\label{square_8h_a7c8dec41518833012a5a269a43036f89}} 
 \index{square.h@{square.h}!showSolution@{showSolution}}
 \index{showSolution@{showSolution}!square.h@{square.h}}
 \doxysubsubsection{\texorpdfstring{showSolution()}{showSolution()}}
-{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void show\+Solution (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const}]{eqt }\end{DoxyParamCaption})}
 
 
 
@@ -133,17 +134,17 @@ Outputs the roots of the quadratic equation.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em eqt} & Pointer to a structure containing the necessary roots and their number \\
+\mbox{\texttt{ out}}  & {\em eqt} & Pointer to a structure containing the necessary data \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Returns nothing 
 \end{DoxyReturn}
-\mbox{\Hypertarget{square_8h_aab36383b91283d94f28f5487f7ac7e65}\label{square_8h_aab36383b91283d94f28f5487f7ac7e65}} 
+\mbox{\Hypertarget{square_8h_a7686b5a6a0ffc0c08ff51d5ab9776fe3}\label{square_8h_a7686b5a6a0ffc0c08ff51d5ab9776fe3}} 
 \index{square.h@{square.h}!solveTheSquare@{solveTheSquare}}
 \index{solveTheSquare@{solveTheSquare}!square.h@{square.h}}
 \doxysubsubsection{\texorpdfstring{solveTheSquare()}{solveTheSquare()}}
-{\footnotesize\ttfamily void solve\+The\+Square (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$}]{eqt }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void solve\+The\+Square (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_equation}{Equation}} $\ast$const}]{eqt }\end{DoxyParamCaption})}
 
 
 
@@ -151,7 +152,7 @@ Solves a quadratic equation based on the coefficients entered by the user.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em eqt} & Pointer to the structure containing the necessary coefficients \\
+\mbox{\texttt{ out}}  & {\em eqt} & Pointer to the structure containing the necessary data \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -169,7 +170,7 @@ A function that swaps two real numbers, if the second is greater than the first.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em TWo} & floating point numbers \\
+\mbox{\texttt{ out}}  & {\em Two} & floating point numbers \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

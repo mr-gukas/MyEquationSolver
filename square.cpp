@@ -17,16 +17,22 @@ int main(void)
         }
         else
         {
+            if (!eatLine(stdin))
+            {
+                fprintf(stderr, "There may have been an error when entering data. Try again\n");
+            }
+            else
+            {
             solveTheSquare(&eqt);
             showSolution(&eqt);
-            eatLine(stdin);
+            }
         }
     }
     puts("The program is completed");
 
     return 0;
 }
-void showSolution(const struct Equation* eqt)
+void showSolution(const struct Equation* const eqt)
 {
 
     assert (eqt != NULL);
@@ -38,13 +44,13 @@ void showSolution(const struct Equation* eqt)
             break;
 
         case ONE_ROOT:
-            printf("This equation has one solution: x = %lg\n", eqt->x1);
+            printf("This equation has one solution: x = %5.3lg\n", eqt->x1);
             break;
 
         case TWO_ROOTS:
             printf("This equation has two solutions:\n");
-            printf("    x1 = %lg\n", eqt->x1);
-            printf("    x2 = %lg\n", eqt->x2);
+            printf("    x1 = %5.3lg\n", eqt->x1);
+            printf("    x2 = %5.3lg\n", eqt->x2);
             break;
 
         case INFIN:

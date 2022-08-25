@@ -1,6 +1,6 @@
 #include "square.h"
 
-void solveTheSquare(struct Equation* eqt)
+void solveTheSquare(struct Equation* const eqt)
 {
 
     assert (eqt != NULL);
@@ -33,8 +33,9 @@ void solveTheSquare(struct Equation* eqt)
         }
         else
         {
-            eqt->x1 = (-b + sqrt(discr)) / (2 * a);
-            eqt->x2 = (-b - sqrt(discr)) / (2 * a);
+            double disSqr = sqrt(discr);
+            eqt->x1 = (-b + disSqr) / (2 * a);
+            eqt->x2 = (-b - disSqr) / (2 * a);
             if (nearZero(eqt->x1 - eqt->x2))
             {
                 eqt->count = ONE_ROOT;
@@ -49,17 +50,21 @@ void solveTheSquare(struct Equation* eqt)
     }
 }
 
-bool nearZero(double x)
+bool nearZero(const double x)
 {
     return fabs(x) < CLOSE_TO_ZERO;
 }
 
-void eatLine(FILE* file)
+bool eatLine(FILE* const file)
 {
+    bool onlySpace = true;
+    int a = 0;
     assert(file != NULL);
 
-    while (fgetc(file) != '\n')
-        continue;
+    while ((a = fgetc(file)) != '\n')
+        if (!isspace(a))
+            onlySpace = false;
+    return onlySpace;
 }
 
 void swapDescending(double* x1, double* x2)

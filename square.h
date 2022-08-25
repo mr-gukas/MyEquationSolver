@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <assert.h>
+#include <ctype.h>
 
 const double CLOSE_TO_ZERO = 1e-5; ///<The value below which we use as zero
 
@@ -19,21 +20,21 @@ enum Roots
  * @param [in] Floating point number
  * @return Close to zero or not
  */
-bool nearZero(double x);
+bool nearZero(const double x);
 
 /**
  * @brief Solves a quadratic equation based on the coefficients entered by the user
- * @param [in] eqt Pointer to the structure containing the necessary coefficients
+ * @param [out] eqt Pointer to the structure containing the necessary data
  * @return Returns nothing
  */
-void solveTheSquare(struct Equation* eqt);
+void solveTheSquare(struct Equation* const eqt);
 
 /**
  * @brief Outputs the roots of the quadratic equation
- * @param [in] eqt Pointer to a structure containing the necessary roots and their number
+ * @param [out] eqt Pointer to a structure containing the necessary data
  * @return Returns nothing
  */
-void showSolution(const struct Equation* eqt);
+void showSolution(const struct Equation* const eqt);
 
 /**
  * @brief Displays a menu in which the user determines further actions
@@ -42,11 +43,11 @@ void showSolution(const struct Equation* eqt);
 int getChoice(void);
 
 /**
- * @brief To switch to a new line
- * @param [in] file From where "eat" the line
- * @return Returns nothing
+ * @brief To appear to a new line in the stream
+ * @param [in] file from where "eat" the line
+ * @return Return true if remains of the line contains only space symbols
  */
-void eatLine(FILE* file);
+bool eatLine(FILE* const file);
 
 ///@brief A data structure that includes equation coefficients, roots, and number of roots
 struct Equation
@@ -55,12 +56,13 @@ struct Equation
     double b = NAN;///<The linear coefficient
     double c = NAN;///<The free coefficient
     Roots count = NO_ROOTS;///<Count of the roots
-    double x1 = NAN;///<The first root
-    double x2 = NAN;///<The second root
+    double x1 = NAN;///<The greater root
+    double x2 = NAN;///<The less root
 };
+
 /**
  * @brief A function that swaps two real numbers, if the second is greater than the first
- * @param [in] TWo floating point numbers
+ * @param [out] Two floating point numbers
  * @return Returns nothing
  */
 void swapDescending(double* x1, double* x2);
